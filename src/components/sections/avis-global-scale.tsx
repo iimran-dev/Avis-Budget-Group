@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Globe, MapPin, Users, Car } from "lucide-react";
 import {
   ComposableMap,
@@ -37,48 +38,70 @@ export function AvisGlobalScale() {
   const [hoveredCity, setHoveredCity] = useState<CityMarker | null>(null);
 
   return (
-    <section id="global-scale" className="py-20 bg-white text-slate-900 overflow-hidden">
+    <section id="global-scale" className="py-14 sm:py-20 bg-white text-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column Text Content */}
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div
+            className="lg:col-span-5 space-y-5 sm:space-y-6"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="text-xs font-bold uppercase tracking-widest text-[#D4001A]">
               GLOBAL SCALE. LOCAL PRESENCE.
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-slate-900">
-              Mobility Solutions <br />
+              Mobility Solutions <br className="hidden sm:inline" />
               That Move The World
             </h2>
 
-            <p className="text-base text-slate-600 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
               From our global brands to our local teams, we are everywhere you need to be.
             </p>
 
             <div>
-              <Link
-                href="#our-brands"
-                className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-slate-900 border border-slate-300 hover:border-[#D4001A] hover:text-[#D4001A] px-6 py-3 rounded-full transition-all"
-              >
-                <span>EXPLORE OUR BRANDS</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <motion.div whileHover={{ x: 4 }} className="inline-block">
+                <Link
+                  href="#ecosystem"
+                  className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-slate-900 border border-slate-300 hover:border-[#D4001A] hover:text-[#D4001A] px-6 py-3 rounded-full transition-all group"
+                >
+                  <span>EXPLORE OUR BRANDS</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column Interactive React Simple Maps */}
-          <div className="lg:col-span-7 relative flex flex-col items-center">
-            <div className="relative w-full aspect-[16/9] max-w-2xl rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-[#F8FAFC]">
+          <motion.div
+            className="lg:col-span-7 relative flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] max-w-2xl rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-[#F8FAFC]">
               
               {/* Tooltip Overlay */}
-              {hoveredCity && (
-                <div className="absolute top-4 left-4 z-20 bg-[#0B0E14] text-white px-3 py-2 rounded-xl shadow-xl border border-white/10 text-xs transition-opacity duration-200 pointer-events-none">
-                  <div className="font-extrabold text-[#D4001A]">{hoveredCity.name}</div>
-                  <div className="text-slate-300 text-[11px] font-medium">{hoveredCity.locations}</div>
-                </div>
-              )}
+              <AnimatePresence>
+                {hoveredCity && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-4 left-4 z-20 bg-[#0B0E14] text-white px-3 py-2 rounded-xl shadow-xl border border-white/10 text-xs pointer-events-none"
+                  >
+                    <div className="font-extrabold text-[#D4001A]">{hoveredCity.name}</div>
+                    <div className="text-slate-300 text-[11px] font-medium">{hoveredCity.locations}</div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               <ComposableMap
                 projection="geoMercator"
@@ -151,7 +174,7 @@ export function AvisGlobalScale() {
               </ComposableMap>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

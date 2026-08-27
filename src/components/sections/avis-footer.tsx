@@ -44,14 +44,14 @@ export function AvisFooter() {
           </nav>
 
           {/* Copyright & Scroll Top */}
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 text-center sm:text-left">
             <div className="text-xs text-slate-500 font-normal">
               © 2026 Avis Budget Group, Inc. All rights reserved.
             </div>
 
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all"
+              className="p-2.5 sm:p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all"
               aria-label="Scroll to top"
             >
               <Plus className="w-4 h-4" />

@@ -45,14 +45,14 @@ export function AvisTimeline() {
   };
 
   return (
-    <section className="py-24 bg-[#0B0E14] text-white overflow-hidden relative border-t border-white/10">
+    <section id="timeline" className="py-16 sm:py-24 bg-[#0B0E14] text-white overflow-hidden relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column Content */}
           <motion.div
-            className="lg:col-span-4 space-y-6"
+            className="lg:col-span-4 space-y-4 sm:space-y-6"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -63,18 +63,18 @@ export function AvisTimeline() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white">
-              Mobility Through <br />
+              Mobility Through <br className="hidden sm:inline" />
               Time
             </h2>
 
-            <p className="text-base text-slate-300 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
               Decades of innovation. A clear vision for the future.
             </p>
 
             <div>
               <motion.div whileHover={{ x: 6 }} className="inline-block">
                 <Link
-                  href="#our-journey"
+                  href="#ecosystem"
                   className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-white border border-white/30 hover:border-[#D4001A] hover:text-[#D4001A] px-6 py-3 rounded-full transition-all"
                 >
                   <span>EXPLORE OUR JOURNEY</span>
@@ -86,14 +86,14 @@ export function AvisTimeline() {
 
           {/* Right Column Interactive Cards Carousel */}
           <div className="lg:col-span-8 relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 relative">
               {eras.map((era, index) => {
                 const isActive = activeIndex === index;
                 return (
                   <motion.div
                     key={era.year}
                     onClick={() => setActiveIndex(index)}
-                    className={`group relative h-80 rounded-2xl overflow-hidden cursor-pointer border transition-all duration-300 ${
+                    className={`group relative h-56 sm:h-80 rounded-2xl overflow-hidden cursor-pointer border transition-all duration-300 ${
                       isActive
                         ? "border-2 border-[#D4001A] shadow-xl shadow-red-900/30"
                         : "border-white/10 opacity-75 hover:opacity-100 hover:border-white/30"
@@ -126,8 +126,8 @@ export function AvisTimeline() {
                     )}
 
                     {/* Text Overlay */}
-                    <div className="absolute inset-0 p-5 flex flex-col justify-between">
-                      <div className="text-sm font-black text-slate-200 uppercase tracking-widest flex items-center justify-between">
+                    <div className="absolute inset-0 p-3.5 sm:p-5 flex flex-col justify-between">
+                      <div className="text-xs sm:text-sm font-black text-slate-200 uppercase tracking-widest flex items-center justify-between">
                         <span>{era.year}</span>
                         {isActive && (
                           <span className="w-2 h-2 rounded-full bg-[#D4001A] animate-ping" />
@@ -135,7 +135,7 @@ export function AvisTimeline() {
                       </div>
 
                       <div>
-                        <h3 className="text-lg font-bold text-white leading-snug">
+                        <h3 className="text-xs sm:text-lg font-bold text-white leading-tight sm:leading-snug">
                           {era.title}
                         </h3>
                       </div>
@@ -149,10 +149,10 @@ export function AvisTimeline() {
                 onClick={handleNext}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white text-slate-900 shadow-2xl flex items-center justify-center hover:bg-slate-100 transition-colors hidden sm:flex"
+                className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-white text-slate-900 shadow-2xl flex items-center justify-center hover:bg-slate-100 transition-colors"
                 aria-label="Next Era"
               >
-                <ChevronRight className="w-6 h-6 text-slate-900" />
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900" />
               </motion.button>
             </div>
 

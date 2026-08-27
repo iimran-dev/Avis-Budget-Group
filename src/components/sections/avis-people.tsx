@@ -41,14 +41,14 @@ export function AvisPeople() {
   };
 
   return (
-    <section id="careers" className="py-24 bg-[#7A0A19] text-white relative overflow-hidden">
+    <section id="careers" className="py-16 sm:py-24 bg-[#7A0A19] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column Content */}
           <motion.div
-            className="lg:col-span-4 space-y-6"
+            className="lg:col-span-4 space-y-5 sm:space-y-6"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -59,18 +59,18 @@ export function AvisPeople() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white">
-              Our People <br />
+              Our People <br className="hidden sm:inline" />
               Drive Us Forward
             </h2>
 
-            <p className="text-base text-red-100/90 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-red-100/90 leading-relaxed font-normal">
               Real people. Real stories. Real impact. Join a team that moves the world.
             </p>
 
             <div>
               <motion.div whileHover={{ x: 6 }} className="inline-block">
                 <Link
-                  href="#careers"
+                  href="#investors"
                   className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-white border border-white/40 hover:border-white hover:bg-white/10 px-6 py-3 rounded-full transition-all"
                 >
                   <span>EXPLORE CAREERS</span>
@@ -82,12 +82,12 @@ export function AvisPeople() {
 
           {/* Right Column 4 Portrait Cards Grid */}
           <div className="lg:col-span-8 relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {people.map((person, idx) => (
                 <motion.div
                   key={person.name}
                   onClick={() => setActivePerson(idx)}
-                  className={`group relative h-96 rounded-2xl overflow-hidden cursor-pointer border transition-all duration-300 ${
+                  className={`group relative h-64 sm:h-96 rounded-2xl overflow-hidden cursor-pointer border transition-all duration-300 ${
                     activePerson === idx
                       ? "border-white ring-2 ring-white/30 shadow-2xl scale-[1.02]"
                       : "border-white/20 opacity-85 hover:opacity-100"
@@ -109,11 +109,11 @@ export function AvisPeople() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
                   {/* Bottom Text Content overlay */}
-                  <div className="absolute inset-0 p-5 flex flex-col justify-end text-white space-y-1">
-                    <div className="text-base font-extrabold">
+                  <div className="absolute inset-0 p-3.5 sm:p-5 flex flex-col justify-end text-white space-y-1">
+                    <div className="text-sm sm:text-base font-extrabold">
                       {person.name}, <span className="font-normal opacity-90">{person.role}</span>
                     </div>
-                    <p className="text-xs italic opacity-85 leading-snug">
+                    <p className="text-[11px] sm:text-xs italic opacity-85 leading-snug line-clamp-2">
                       &ldquo;{person.quote}&rdquo;
                     </p>
                   </div>
@@ -126,10 +126,10 @@ export function AvisPeople() {
               onClick={handleNext}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-slate-100 transition-colors hidden sm:flex"
+              className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-slate-100 transition-colors"
               aria-label="Next Team Member"
             >
-              <ChevronRight className="w-5 h-5 text-slate-900" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
             </motion.button>
           </div>
 

@@ -40,29 +40,29 @@ export function AvisInnovationLab() {
   };
 
   return (
-    <section className="py-24 bg-slate-50 text-slate-900 border-t border-slate-200">
+    <section id="innovation" className="py-16 sm:py-24 bg-slate-50 text-slate-900 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column Content */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-4 space-y-5 sm:space-y-6">
             <div className="text-xs font-bold uppercase tracking-widest text-[#D4001A]">
               INNOVATING FOR WHAT&apos;S NEXT
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-slate-900">
-              Mobility Innovation <br />
+              Mobility Innovation <br className="hidden sm:inline" />
               Lab
             </h2>
 
-            <p className="text-base text-slate-600 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
               Using technology and data to build smarter, safer, and more sustainable mobility solutions.
             </p>
 
             <div>
               <Link
-                href="#innovations"
+                href="#careers"
                 className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-slate-900 border border-slate-300 hover:border-[#D4001A] hover:text-[#D4001A] px-6 py-3 rounded-full transition-all"
               >
                 <span>EXPLORE INNOVATIONS</span>
@@ -73,7 +73,7 @@ export function AvisInnovationLab() {
 
           {/* Right Column 4 Innovation Cards Grid / Carousel */}
           <div className="lg:col-span-8 relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {cards.map((card, idx) => (
                 <div
                   key={card.id}
@@ -84,7 +84,7 @@ export function AvisInnovationLab() {
                       : "border-slate-200 hover:border-slate-300"
                   }`}
                 >
-                  <div className="relative h-36 w-full overflow-hidden bg-slate-100">
+                  <div className="relative h-28 sm:h-36 w-full overflow-hidden bg-slate-100">
                     <Image
                       src={card.image}
                       alt={card.title}
@@ -92,11 +92,11 @@ export function AvisInnovationLab() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-4 space-y-2">
-                    <h3 className="text-sm font-extrabold text-slate-900 leading-snug">
+                  <div className="p-3 sm:p-4 space-y-1 sm:space-y-2">
+                    <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed line-clamp-2">
                       {card.description}
                     </p>
                   </div>
@@ -107,10 +107,10 @@ export function AvisInnovationLab() {
             {/* Next Chevron Nav button */}
             <button
               onClick={handleNext}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-xl border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-transform active:scale-95 hidden sm:flex"
+              className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-xl border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-transform active:scale-95"
               aria-label="Next Innovation"
             >
-              <ChevronRight className="w-5 h-5 text-slate-900" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" />
             </button>
 
             {/* Pagination Dots */}

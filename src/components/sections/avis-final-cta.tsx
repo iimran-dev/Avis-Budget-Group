@@ -29,7 +29,7 @@ export function AvisFinalCta() {
   ];
 
   return (
-    <section className="relative py-28 bg-[#0B0E14] text-white overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-28 bg-[#0B0E14] text-white overflow-hidden">
       
       {/* Background Image & Vignette */}
       <div className="absolute inset-0 z-0">
@@ -43,45 +43,45 @@ export function AvisFinalCta() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column Text */}
           <motion.div
-            className="lg:col-span-5 space-y-6"
+            className="lg:col-span-5 space-y-4 sm:space-y-6"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight text-white">
-              Let&apos;s Move <br />
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
+              Let&apos;s Move <br className="hidden sm:inline" />
               The World Forward
             </h2>
 
-            <p className="text-base text-slate-300 leading-relaxed font-normal max-w-md">
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-md">
               Together, we&apos;re building a world where mobility is smarter, safer and more sustainable for all.
             </p>
           </motion.div>
 
           {/* Right Column 3 Audience Cards */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             {cards.map((card, idx) => {
               const Icon = card.icon;
               return (
                 <motion.div
                   key={card.title}
-                  className="bg-[#141822]/80 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-6 hover:border-white/30 hover:bg-[#1A202C]/90 transition-all group"
+                  className="bg-[#141822]/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between space-y-4 sm:space-y-6 hover:border-white/30 hover:bg-[#1A202C]/90 transition-all group"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   whileHover={{ y: -6, scale: 1.02 }}
                 >
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-white w-fit group-hover:text-[#D4001A] transition-colors">
-                    <Icon className="w-6 h-6" />
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/10 text-white w-fit group-hover:text-[#D4001A] transition-colors">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1.5 sm:space-y-2">
                     <div className="text-sm font-extrabold text-white">{card.title}</div>
                     <p className="text-xs text-slate-400 leading-relaxed">{card.desc}</p>
                   </div>

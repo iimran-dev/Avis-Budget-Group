@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Plane, Building2, Building, Handshake, Zap, Users } from "lucide-react";
+import ecosystemDiagram from "../../../public/images/ecosystem_diagram.jpg";
 
 export function AvisEcosystem() {
   const leftColumn = [
@@ -23,17 +24,17 @@ export function AvisEcosystem() {
   const luxuryEase = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F8FAFC] text-slate-900 border-t border-slate-200 relative overflow-hidden">
+    <section id="ecosystem" className="py-14 sm:py-28 bg-[#F8FAFC] text-slate-900 border-t border-slate-200 relative overflow-hidden">
       
       {/* Subtle architectural grid background */}
       <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#0F172A_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column Content */}
           <motion.div
-            className="lg:col-span-5 space-y-6"
+            className="lg:col-span-5 space-y-5 sm:space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -45,21 +46,21 @@ export function AvisEcosystem() {
             </div>
 
             {/* Title */}
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
-              A Global Mobility <br />
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-[1.15] text-slate-900">
+              A Global Mobility <br className="hidden sm:inline" />
               Ecosystem
             </h2>
 
             {/* Description */}
-            <p className="text-base text-slate-600 leading-relaxed font-normal max-w-md">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-md">
               Our network connects people, places and possibilities through technology,
               partnerships and a shared purpose.
             </p>
 
             {/* Learn More Link with Refined Line Accent */}
-            <div className="pt-2">
+            <div className="pt-1 sm:pt-2">
               <Link
-                href="#learn-more"
+                href="#sustainability"
                 className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-widest text-slate-900 hover:text-[#D4001A] transition-colors group"
               >
                 <span>LEARN MORE</span>
@@ -127,7 +128,7 @@ export function AvisEcosystem() {
           >
             <div className="relative w-full max-w-2xl aspect-[16/10] bg-white rounded-3xl p-3 sm:p-5 shadow-[0_20px_50px_rgba(15,23,42,0.08)] border border-slate-200/80 overflow-hidden flex items-center justify-center">
               <Image
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop"
+                src={ecosystemDiagram}
                 alt="A Global Mobility Ecosystem Isometric 3D Diagram"
                 fill
                 priority

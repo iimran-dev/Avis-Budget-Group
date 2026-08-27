@@ -45,14 +45,14 @@ export function AvisInvestorsNews() {
   };
 
   return (
-    <section id="investors" className="py-24 bg-white text-slate-900 border-t border-slate-200">
+    <section id="investors" className="py-16 sm:py-24 bg-white text-slate-900 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Left Column: Investor Center & Stock Widget */}
           <motion.div
-            className="lg:col-span-6 space-y-6"
+            className="lg:col-span-6 space-y-5 sm:space-y-6"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -73,7 +73,7 @@ export function AvisInvestorsNews() {
             <div>
               <motion.div whileHover={{ x: 6 }} className="inline-block">
                 <Link
-                  href="#investor-center"
+                  href="#contact"
                   className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-slate-900 border border-slate-300 hover:border-[#D4001A] hover:text-[#D4001A] px-6 py-3 rounded-full transition-all"
                 >
                   <span>VIEW INVESTOR CENTER</span>
@@ -82,29 +82,29 @@ export function AvisInvestorsNews() {
             </div>
 
             {/* NASDAQ CAR Stock Ticker Card */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-xs space-y-4 max-w-lg">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-xs space-y-3 sm:space-y-4 max-w-lg">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                     NASDAQ: CAR
                   </div>
-                  <div className="text-3xl font-black text-slate-900 tabular">
-                    185.42 <span className="text-sm font-semibold text-slate-500">USD</span>
+                  <div className="text-2xl sm:text-3xl font-black text-slate-900 tabular">
+                    185.42 <span className="text-xs sm:text-sm font-semibold text-slate-500">USD</span>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-1.5 text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200 text-xs font-bold">
-                  <TrendingUp className="w-4 h-4" />
+                <div className="flex items-center space-x-1 sm:space-x-1.5 text-emerald-600 bg-emerald-50 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-emerald-200 text-[11px] sm:text-xs font-bold">
+                  <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>+2.25 (+1.23%)</span>
                 </div>
               </div>
 
-              <div className="text-[11px] text-slate-400">
+              <div className="text-[10px] sm:text-[11px] text-slate-400">
                 May 20, 2026 4:00 PM ET • Real-Time Quote
               </div>
 
               {/* Animated SVG Chart */}
-              <div className="h-32 w-full pt-2 relative">
+              <div className="h-28 sm:h-32 w-full pt-2 relative">
                 <svg className="w-full h-full overflow-visible" viewBox="0 0 400 100" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="stockGradient" x1="0" y1="0" x2="0" y2="1">
@@ -140,12 +140,12 @@ export function AvisInvestorsNews() {
               </div>
 
               {/* Timeframe Filter Buttons */}
-              <div className="flex items-center space-x-2 pt-2 border-t border-slate-200">
+              <div className="flex items-center space-x-1.5 sm:space-x-2 pt-2 border-t border-slate-200">
                 {["1D", "1M", "1Y", "5Y", "ALL"].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${
+                    className={`px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-bold transition-all ${
                       activeTab === tab
                         ? "bg-slate-900 text-white shadow-xs"
                         : "text-slate-500 hover:text-slate-900 hover:bg-slate-200"
@@ -162,7 +162,7 @@ export function AvisInvestorsNews() {
           {/* Right Column: Latest News */}
           <motion.div
             id="newsroom"
-            className="lg:col-span-6 space-y-6"
+            className="lg:col-span-6 space-y-5 sm:space-y-6"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -183,7 +183,7 @@ export function AvisInvestorsNews() {
             <div>
               <motion.div whileHover={{ x: 6 }} className="inline-block">
                 <Link
-                  href="#all-news"
+                  href="#contact"
                   className="inline-flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-slate-900 border border-slate-300 hover:border-[#D4001A] hover:text-[#D4001A] px-6 py-3 rounded-full transition-all"
                 >
                   <span>VIEW ALL NEWS</span>
@@ -192,7 +192,7 @@ export function AvisInvestorsNews() {
             </div>
 
             {/* News Cards List */}
-            <div className="space-y-4 pt-2">
+            <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
               {newsItems.map((item, idx) => (
                 <motion.div
                   key={item.title}
@@ -204,9 +204,9 @@ export function AvisInvestorsNews() {
                 >
                   <Link
                     href="#"
-                    className="group flex items-center space-x-4 p-3 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-slate-50 transition-all"
+                    className="group flex items-center space-x-3 sm:space-x-4 p-2.5 sm:p-3 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-slate-50 transition-all"
                   >
-                    <div className="relative h-20 w-24 rounded-xl overflow-hidden shrink-0 bg-slate-100">
+                    <div className="relative h-16 w-20 sm:h-20 sm:w-24 rounded-xl overflow-hidden shrink-0 bg-slate-100">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -216,16 +216,16 @@ export function AvisInvestorsNews() {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-[#D4001A] transition-colors">
+                      <h3 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-[#D4001A] transition-colors">
                         {item.title}
                       </h3>
-                      <div className="text-xs text-slate-400 mt-1">
+                      <div className="text-[11px] sm:text-xs text-slate-400 mt-1">
                         {item.date}
                       </div>
                     </div>
 
-                    <div className="p-2 text-slate-400 group-hover:text-[#D4001A] group-hover:translate-x-1 transition-all">
-                      <ArrowUpRight className="w-5 h-5" />
+                    <div className="p-1.5 sm:p-2 text-slate-400 group-hover:text-[#D4001A] group-hover:translate-x-1 transition-all">
+                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                   </Link>
                 </motion.div>

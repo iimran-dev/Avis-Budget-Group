@@ -82,20 +82,20 @@ export function AvisHero() {
           </motion.p>
 
           {/* Action Buttons */}
-          <motion.div className="flex flex-wrap gap-4 pt-2" variants={itemVariants}>
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+          <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 w-full sm:w-auto" variants={itemVariants}>
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="w-full sm:w-auto">
               <Link
-                href="#who-we-are"
-                className="bg-[#D4001A] hover:bg-[#B80016] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-red-600/40 flex items-center justify-center"
+                href="#global-scale"
+                className="bg-[#D4001A] hover:bg-[#B80016] text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-red-600/40 flex items-center justify-center w-full sm:w-auto text-center"
               >
                 ABOUT US
               </Link>
             </motion.div>
 
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="w-full sm:w-auto">
               <Link
-                href="#our-brands"
-                className="bg-slate-900/60 hover:bg-slate-900/80 backdrop-blur-md text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3.5 rounded-full border border-white/30 transition-all flex items-center justify-center hover:border-white/60"
+                href="#ecosystem"
+                className="bg-slate-900/60 hover:bg-slate-900/80 backdrop-blur-md text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-8 py-3.5 rounded-full border border-white/30 transition-all flex items-center justify-center w-full sm:w-auto text-center hover:border-white/60"
               >
                 OUR BRANDS
               </Link>
@@ -104,7 +104,7 @@ export function AvisHero() {
         </div>
 
         {/* Scroll Indicator Prompt */}
-        <div className="w-full flex justify-center mt-12 mb-4">
+        <div className="w-full flex justify-center mt-8 sm:mt-12 mb-4">
           <motion.a
             href="#global-scale"
             className="text-white/70 hover:text-white transition-colors p-2"
@@ -119,31 +119,31 @@ export function AvisHero() {
 
       {/* Bottom Floating Glass Stat Bar Overlay */}
       <motion.div
-        className="relative z-10 w-full bg-[#0F141E]/80 backdrop-blur-md border-t border-white/10 py-6 px-4"
+        className="relative z-10 w-full bg-[#0F141E]/90 backdrop-blur-md border-t border-white/10 py-5 sm:py-6 px-4"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
               <motion.div
                 key={stat.label}
-                className="flex items-center space-x-4 border-r border-white/10 last:border-r-0 pr-4"
+                className="flex items-center space-x-3 sm:space-x-4 border-r-0 md:border-r md:border-white/10 md:last:border-r-0 pr-0 md:pr-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + idx * 0.1 }}
                 whileHover={{ x: 4 }}
               >
-                <div className="p-3 rounded-full bg-white/5 border border-white/10 text-white shrink-0 group-hover:border-[#D4001A] transition-colors">
-                  <Icon className="w-6 h-6 text-[#D4001A]" />
+                <div className="p-2.5 sm:p-3 rounded-full bg-white/5 border border-white/10 text-white shrink-0 group-hover:border-[#D4001A] transition-colors">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#D4001A]" />
                 </div>
                 <div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                  <div className="text-lg sm:text-2xl font-extrabold text-white tracking-tight">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-slate-400 font-medium uppercase tracking-wider">
+                  <div className="text-[10px] sm:text-xs text-slate-400 font-medium uppercase tracking-wider">
                     {stat.label}
                   </div>
                 </div>
