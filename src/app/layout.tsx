@@ -1,54 +1,47 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
-import { CustomCursor } from "@/components/providers/custom-cursor";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Hamdan Al Mansoori | Dubai Luxury Real Estate Investment Advisor",
+  title: "Avis Budget Group | Driving the Future of Mobility",
   description:
-    "Hamdan Al Mansoori — a trusted Dubai real estate investment advisor. Building wealth and creating legacies through premium Dubai property investments, off-plan projects, and portfolio management.",
+    "Avis Budget Group is a leading global provider of mobility solutions, operating three of the most recognized brands in the travel industry: Avis, Budget and Zipcar.",
   keywords: [
-    "Dubai real estate",
-    "Dubai property investment",
-    "Hamdan Al Mansoori",
-    "off-plan projects Dubai",
-    "luxury real estate Dubai",
-    "Golden Visa Dubai",
-    "Dubai investment advisor",
+    "Avis Budget Group",
+    "Avis Car Rental",
+    "Budget Car Rental",
+    "Zipcar",
+    "Global Mobility Solutions",
+    "Connected Fleet",
+    "EV Mobility",
+    "Investor Relations NASDAQ CAR",
   ],
-  authors: [{ name: "Hamdan Al Mansoori" }],
   openGraph: {
-    title: "Hamdan Al Mansoori | Dubai Luxury Real Estate Investment Advisor",
+    title: "Avis Budget Group | Driving the Future of Mobility",
     description:
-      "Building wealth. Creating legacies. Premium Dubai real estate investment advisory.",
-    siteName: "Hamdan Al Mansoori Real Estate",
+      "Delivering innovative mobility solutions that are safe, sustainable and accessible for all.",
+    siteName: "Avis Budget Group",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hamdan Al Mansoori | Dubai Luxury Real Estate Investment Advisor",
+    title: "Avis Budget Group | Driving the Future of Mobility",
     description:
-      "Building wealth. Creating legacies. Premium Dubai real estate investment advisory.",
-  },
-  icons: {
-    icon: "/almansoori/brand/logo-mobile.svg",
-    shortcut: "/almansoori/brand/logo-mobile.svg",
-    apple: "/almansoori/brand/logo-mobile.svg",
+      "Delivering innovative mobility solutions that are safe, sustainable and accessible for all.",
   },
 };
 
@@ -58,15 +51,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
+    <html lang="en" suppressHydrationWarning className="light">
       <body
-        className={`${inter.variable} ${cormorant.variable} antialiased bg-background text-foreground`}
+        className={`${plusJakarta.variable} ${inter.variable} antialiased bg-white text-slate-900 font-sans`}
       >
-        <SmoothScrollProvider>
-          <CustomCursor />
-          {children}
-          <Toaster />
-        </SmoothScrollProvider>
+        {children}
       </body>
     </html>
   );

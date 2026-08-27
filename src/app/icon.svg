@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none" width="100%" height="100%">
-  <!-- Outer House Roof Structure (White/Light Charcoal) -->
-  <path d="M120 18 L25 90 V185 H60 V102 L120 57 L180 102 V118 H215 V90 L120 18 Z" fill="#F7F5F2"/>
-  <path d="M78 152 H180 V185 H78 Z" fill="#F7F5F2"/>
-  
-  <!-- Interlocking Gold H Emblem -->
-  <path d="M52 75 H85 V120 H155 V35 H188 V152 H155 V146 H85 V215 H52 V75 Z" fill="#C5A265"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="128" fill="#0B0E14"/>
+  <!-- Avis Red Dynamic Slanted Stripe -->
+  <path d="M110 370 L210 140 H280 L180 370 H110 Z" fill="#D4001A"/>
+  <!-- Budget Orange Dynamic Slanted Stripe -->
+  <path d="M220 370 L320 140 H390 L290 370 H220 Z" fill="#FF6600"/>
+  <!-- White Accent Chevron -->
+  <path d="M340 370 L410 270 H440 L370 370 H340 Z" fill="#FFFFFF" opacity="0.9"/>
 </svg>

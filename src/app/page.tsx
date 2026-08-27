@@ -1,30 +1,35 @@
-import { Header } from "@/components/sections/header";
-import { Hero } from "@/components/sections/hero";
-import { Services } from "@/components/sections/services";
-import { FeaturedOpportunities } from "@/components/sections/featured-opportunities";
-import { WhyDubai } from "@/components/sections/why-dubai";
-import { FounderStory } from "@/components/sections/founder-story";
-import { InvestmentJourney } from "@/components/sections/investment-journey";
-import { TrackRecord } from "@/components/sections/track-record";
-import { Testimonials } from "@/components/sections/testimonials";
-import { MarketInsights } from "@/components/sections/market-insights";
-import { FinalCTA } from "@/components/sections/final-cta";
-import { Footer } from "@/components/sections/footer";
+import { AvisHeader } from "@/components/sections/avis-header";
+import { AvisHero } from "@/components/sections/avis-hero";
+import { AvisGlobalScale } from "@/components/sections/avis-global-scale";
+import { AvisTimeline } from "@/components/sections/avis-timeline";
+import { AvisEcosystem } from "@/components/sections/avis-ecosystem";
+import { AvisEsg } from "@/components/sections/avis-esg";
+import { AvisInnovationLab } from "@/components/sections/avis-innovation-lab";
+import { AvisPeople } from "@/components/sections/avis-people";
+import { AvisInvestorsNews } from "@/components/sections/avis-investors-news";
+import { AvisFinalCta } from "@/components/sections/avis-final-cta";
+import { AvisFooter } from "@/components/sections/avis-footer";
+
+export const metadata = {
+  title: "Avis Budget Group | Driving the Future of Mobility",
+  description:
+    "We make life's journeys better by delivering innovative mobility solutions that are safe, sustainable and accessible for all.",
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#0B0D10]">
-      <Header />
-      <Hero />
-      <Services />
-      <FeaturedOpportunities />
-      <WhyDubai />
-      <InvestmentJourney />
-      <TrackRecord />
-      <Testimonials />
-      <MarketInsights />
-      <FinalCTA />
-      <Footer />
+    <main className="flex min-h-screen flex-col bg-white">
+      <AvisHeader />
+      <AvisHero />
+      <AvisGlobalScale />
+      <AvisTimeline />
+      <AvisEcosystem />
+      <AvisEsg />
+      <AvisInnovationLab />
+      <AvisPeople />
+      <AvisInvestorsNews />
+      <AvisFinalCta />
+      <AvisFooter />
     </main>
   );
 }
