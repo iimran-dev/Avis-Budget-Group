@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { Globe, MapPin, Users, Car, ChevronDown } from "lucide-react";
+import heroMobilitySunset from "../../../public/images/hero_mobility_sunset.jpg";
 
 export function AvisHero() {
   const containerVariants: Variants = {
@@ -44,7 +45,7 @@ export function AvisHero() {
         transition={{ duration: 1.8, ease: "easeOut" }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1920&auto=format&fit=crop"
+          src={heroMobilitySunset}
           alt="Driving the Future of Mobility"
           fill
           priority
